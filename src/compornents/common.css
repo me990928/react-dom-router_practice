@@ -1,0 +1,29 @@
+.barBody{
+    width: 200px;
+    height: 100vh;
+    background-color: aqua;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100000;
+}
+
+.barTopBody{
+    text-align: right;
+    width: 100vw;
+    height: 100px;
+    background-color: yellow;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+}
+
+.links{
+    margin-top: 100px;
+}
+
+.topLinks{
+    padding-top: 50px;
+    margin-right: 50px;
+}

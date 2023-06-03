@@ -1,25 +1,49 @@
-import logo from './logo.svg';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
+import MySidebar from "./compornents/mySidebar";
+import MyTopbar from './compornents/myTopbar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app'>
+      <Router>
+        {/* 黄色のバー */}
+        <MyTopbar />
+        <div className='wrap'>
+          {/* 青色のバー */}
+        <MySidebar />
+        {/* リンク先を表示する場所 */}
+        <div className='main'>
+        <Routes>
+          <Route path='/' element={<Home />}/>
+          <Route path='/about' element={<About />}/>
+          <Route path='/*' element={<NotFound />}/>
+        </Routes>
+        </div>
+        </div>
+      </Router>
     </div>
   );
 }
 
 export default App;
+
+function Home(){
+  return (
+    <div>やあHome</div>
+  );
+}
+function About(){
+  return (
+    <div>やあAbout</div>
+  );
+}
+function NotFound(){
+  return (
+    <div>NotFound</div>
+  );
+}
